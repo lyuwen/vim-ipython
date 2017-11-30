@@ -36,6 +36,10 @@ IPython command::
 
   :IPython
 
+or::
+
+  :IPythonNew
+
 The ``:IPython`` command allows you to put the full connection string. For
 IPython 0.11, it would look like this::
 

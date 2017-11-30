@@ -29,6 +29,11 @@ if !exists('g:ipy_perform_mappings')
     let g:ipy_perform_mappings = 1
 endif
 
+" Allow custom mappings.
+if !exists('g:ipy_autostart')
+    let g:ipy_autostart = 0
+endif
+
 " Register IPython completefunc
 " 'global'   -- for all of vim (default).
 " 'local'    -- only for the current buffer.
@@ -205,3 +210,8 @@ endpython
         return res
       endif
     endfun
+
+
+if g:ipy_autostart != 0
+  silent IPythonNew
+endif
