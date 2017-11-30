@@ -93,7 +93,7 @@ def new_ipy(s=''):
         new_ipy()
 
     """
-    from IPython.kernel import KernelManager
+    from jupyter_client import KernelManager
     km = KernelManager()
     km.start_kernel()
     return km_from_string(km.connection_file)
@@ -104,21 +104,18 @@ def km_from_string(s=''):
     or just 'kernel-12345.json' for IPython 0.12
     """
     try:
-        import IPython
+        import jupyter
     except ImportError:
-        raise ImportError("Could not find IPython. " + _install_instructions)
-    from IPython.config.loader import KeyValueConfigLoader
+        raise ImportError("Could not find jupyter. " + _install_instructions)
+    from traitlets.config.loader import KeyValueConfigLoader
     try:
-        from IPython.kernel import (
-            KernelManager,
-            find_connection_file,
-        )
+        from jupyter_client import KernelManager, find_connection_file
     except ImportError:
         #  IPython < 1.0
-        from IPython.zmq.blockingkernelmanager import BlockingKernelManager as KernelManager
-        from IPython.zmq.kernelapp import kernel_aliases
+        from jupyter_client import KernelManager, find_connection_file
+        from ipykernel.kernelapp import kernel_aliases
         try:
-            from IPython.lib.kernel import find_connection_file
+            from ipykernel.connect import find_connection_file
         except ImportError:
             # < 0.12, no find_connection_file
             pass
