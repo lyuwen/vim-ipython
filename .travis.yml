@@ -1,8 +1,7 @@
 language: vim
 
 before_script: |
-  - pip install --user jupyter
-  - git clone https://github.com/junegunn/vader.vim.git
+  git clone https://github.com/junegunn/vader.vim.git
 
 script: |
   vim -Nu <(cat << VIMRC
