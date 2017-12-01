@@ -28,7 +28,7 @@ Expect:
 Execute python (check vim_ipython import):
   import vim
   vim.command("set ft=python")
-  vim.command("IPython")
+  vim.command("IPythonNew")
   import vim_ipython
   current.buffer.append("vim_ipython loaded")
 
