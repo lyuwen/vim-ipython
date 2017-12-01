@@ -1,6 +1,6 @@
 language: vim
 
-install: "pip install jupyter --use-mirrors"
+install: "pip install jupyter"
 
 before_script: |
   git clone https://github.com/junegunn/vader.vim.git
