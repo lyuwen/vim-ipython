@@ -2,6 +2,9 @@
 vim-ipython
 ###########
 
+.. image:: https://travis-ci.org/lyuwen/vim-ipython.svg?branch=master
+    :target: https://travis-ci.org/lyuwen/vim-ipython
+
 A two-way integration between Vim and IPython.
 
 IPython versions 0.11.x, 0.12.x, 0.13.x, 1.x, 2.x and 3.x
